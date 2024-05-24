@@ -11,6 +11,9 @@ data class CharactersResponse(
 fun CharactersResponse.toCharacterModel(): Character {
   return Character(
     name = this.name,
-    imageUrl = "${this.thumbnail.path}.${this.thumbnail.extensionPath}"
+    imageUrl = "${this.thumbnail.path}.${this.thumbnail.extensionPath}".replace(
+      "http",
+      "https"
+    )
   )
 }
